@@ -1,10 +1,8 @@
-<h1>Basic</h1>
-1,<br>
+<h1>NgxContextStore</h1>
+<h2 class="example">1, Attribute directive ([setContext]) syntax</h2>
 <div [setContext]="'alma'">
   <div>
     <div *getContext="let context">
-      <code>[setContext]="'alma'"</code><br>
-      <code> *getContext="let context"</code><br>
       <strong>
         context ($implicit): {{context}} === alma
       </strong>
@@ -12,13 +10,10 @@
   </div>
 </div>
 <hr>
-2,<br>
+<h2 class="example">2, Attribute directive ([setContext], [setContextUnder]) syntax for explicit context keys</h2>
 <div [setContext]="'alma'" [setContextUnder]="'key'">
   <div>
     <div *getContext="let key = key">
-      <code>[setContext]="'alma'"</code><br>
-      <code>[setContextUnder]="'key'"</code><br>
-      <code> *getContext="let key = key"</code><br>
       <strong>
         key: {{key}} === alma
       </strong>
@@ -26,13 +21,10 @@
   </div>
 </div>
 <hr>
-3,<br>
+<h2 class="example">3, Reactive values</h2>
 <div [setContext]="counter$ | async">
   <div>
     <div *getContext="let context">
-      <code>counter$ = timer(0, 1000);</code><br>
-      <code>[setContext]="counter$ | async"</code><br>
-      <code>*getContext="let context"</code><br>
       <strong>
         context ($implicit): {{context}} === {{counter$ | async}} &lt;&lt;reactive counter&gt;&gt;
       </strong>
@@ -40,13 +32,10 @@
   </div>
 </div>
 <hr>
-4,<br>
+<h2 class="example">4, Structural directive (*setContext, under &lt;&lt;key&gt;&gt;) syntax</h2>
 <div *setContext="counter$ | async under 'counter'">
   <div>
     <div *getContext="let counter = counter">
-      <code>counter$ = timer(0, 1000);</code><br>
-      <code>*setContext="counter$ | async under 'counter'"</code><br>
-      <code>*getContext="let counter = counter"</code><br>
       <strong>
         counter: {{counter}} === {{counter$ | async}} &lt;&lt;reactive counter&gt;&gt;
       </strong>
@@ -54,7 +43,7 @@
   </div>
 </div>
 <hr>
-5,<br>
+<h2 class="example">5, Simple [setContextO] syntax to define multiple keys at once</h2>
 <div [setContextO]="{ $implicit: 'alma', a: 1, b: 2, c: { counter: (counter$|async) } }">
   <div>
     <div *getContext="let context; let a = a; let bb = b; let c = c">
@@ -65,8 +54,7 @@
   </div>
 </div>
 <hr>
-<h1>Inherit</h1>
-6,<br>
+<h2 class="example">6, Multiple setContext with inherited values</h2>
 <div [setContextO]="{ a: 1, b: 2, c: (counter$|async) }">
   <div *getContext="let a = a; let b = b; let c = c">
     <strong>
@@ -80,4 +68,12 @@
       </div>
     </div>
   </div>
+</div>
+<hr>
+<h2 class="example">7, Lazy loaded component in a router-outlet</h2>
+<div class="lazy-wrapper" [setContextO]="{ lazy: lazyValue, incLazy: incrementLazyValue }">
+  Lazy value: {{ lazyValue }}
+  <br>&lt;&lt;lazy-wrapper&gt;&gt;<br>
+      <router-outlet></router-outlet>
+  <br>&lt;&lt;/lazy-wrapper&gt;&gt;<br>
 </div>

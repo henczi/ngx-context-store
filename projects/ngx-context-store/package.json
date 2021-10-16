@@ -1,6 +1,15 @@
 {
   "name": "ngx-context-store",
-  "version": "1.0.0-beta.1",
+  "version": "1.0.0-beta.2",
+  "description": "An alternative yet advanced mechanism for Angular components to share data.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/henczi/ngx-context-store.git"
+  },
+  "bugs": {
+    "url": "https://github.com/henczi/ngx-context-store/issues"
+  },
   "peerDependencies": {
     "@angular/common": ">=9.0.0",
     "@angular/core": ">=9.0.0",
@@ -8,5 +17,21 @@
   },
   "dependencies": {
     "tslib": "^2.0.0"
-  }
+  },
+  "keywords": [
+    "ngx-context-store",
+    "context-store",
+    "context",
+    "store",
+    "angular",
+    "ng",
+    "ngx",
+    "data",
+    "share",
+    "dependency injection",
+    "input",
+    "pass",
+    "output",
+    "data-binding"
+  ]
 }

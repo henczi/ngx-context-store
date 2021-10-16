@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { timer } from 'rxjs';
 
 @Component({
@@ -10,4 +10,9 @@ export class AppComponent {
   title = 'demo';
 
   counter$ = timer(0, 1000);
+  lazyValue = 0;
+  incrementLazyValue = () => {
+    this.lazyValue++;
+  }
+
 }
