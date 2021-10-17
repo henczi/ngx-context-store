@@ -43,22 +43,25 @@ Then you can get this data everywhere inside with the `getContext` directive.
 
 ### Over multiple components
 
-<!-- parent.component -->
 ```html
+<!-- parent.component -->
+
 <div [setContextO]="{ lastname: 'Appleseed', info: '...' }">
     <child-component></child-component>
 </div>
 ```
 
-<!-- child.component -->
 ```html
+<!-- child.component -->
+
 <div *setContext="myHelp under 'help'"> <!-- myHelp is a function -->
     <grandchild-component></grandchild-component>
 </div>
 ```
 
-<!-- grandchild.component -->
 ```html
+<!-- grandchild.component -->
+
 <div *getContext="let lastname = lastname; let info = info; let help = help">
     Lastname: {{lastname}}
     Info: {{info}}

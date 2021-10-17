@@ -1,6 +1,6 @@
 {
   "name": "ngx-context-store",
-  "version": "1.0.0-rc.1",
+  "version": "1.0.0-rc.2",
   "description": "An alternative yet advanced mechanism for Angular components to share data.",
   "license": "MIT",
   "repository": {
