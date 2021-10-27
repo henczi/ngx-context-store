@@ -2,6 +2,8 @@
 
 An alternative yet advanced mechanism for Angular components to share data.
 
+Demo on [StackBlitz](https://stackblitz.com/edit/ngx-context-store-demo)
+
 ## Getting started
 
 ### Install via NPM
